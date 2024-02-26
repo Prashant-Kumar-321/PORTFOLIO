@@ -58,33 +58,28 @@ section{
 .section{
   transform: translateY(-100%) scale(0);
   transition: var(--trans); 
-  color: var(--color-primary); 
+  color: var(--color-white); 
 }
 
 .sec1{
   display: none; 
   transform: translateY(0) scale(1); 
-  background-color: blue;
 }
 .sec2{
   display: none; 
   transform: translateY(0) scale(1); 
-  background-color: red;
 }
 .sec3{
   display: none; 
   transform: translateY(0) scale(1); 
-  background-color: pink;
 }
 .sec4{
   display: none; 
   transform: translateY(0) scale(1);
-  background-color: lime; 
 }
 .sec5{
   display: none; 
   transform: translateY(0) scale(1); 
-  background-color: forestgreen;
 }
 
 .active{
@@ -101,7 +96,6 @@ section{
     }
   }
 }
-
 
 // controls 
 .controls{
@@ -142,3 +136,15 @@ section{
     }
   }
 }
+
+/* Header content */
+.header{
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+
+/*Independent content */
+
+
