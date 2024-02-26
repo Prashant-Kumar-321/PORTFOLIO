@@ -1,12 +1,13 @@
 const sections = document.querySelectorAll('.section'); 
 const sectBtn = document.querySelectorAll('.controls'); 
 const sectionBtns = document.querySelectorAll('.control'); 
-const allSections = document.querySelectorAll('.main-content'); 
+const allSections = document.querySelector('.main-content'); 
 
 
 function pageTransition() {
 	// button clicked active class 
 	for(let i=0; i<sectionBtns.length; ++i){
+
 		//listen event whether current btn has been clickeed  or not 
 		sectionBtns[i].addEventListener('click', function (){
 
@@ -18,6 +19,29 @@ function pageTransition() {
 			
 		}); 
 	}
+
+	// section active 
+	allSections.addEventListener('click', (e) =>{
+		const id = e.target.dataset.id; 
+		if(id){
+			// remove selected from the other btns 
+			sectionBtns.forEach((btn) =>{
+				btn.classList.remove('active'); 
+			}); 
+
+			e.target.classList.add('active'); 
+
+			// hide other sections 
+			sections.forEach((section)=>{
+				section.classList.remove('active'); 
+			}); 
+
+			const element = document.getElementById(id); 
+			element.classList.add('active'); 
+		}
+	}); 
+
+
 }
 
 pageTransition(); 
